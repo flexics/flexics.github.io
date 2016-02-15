@@ -1,6 +1,6 @@
 /*********************************************
- * DashFlexics v0.11
- * Able to append classes together, contains keywords "df-" with "-component-"
+ * DashFlex CSS styling, v0.11
+ * Able to append classes together, contains keywords "df-" with "-name"
  * Originally created as the Bootstrap supplement with flex
  * Author: yuhan2013@outlook.com
  * Date: 5 Feb 2016
@@ -295,6 +295,7 @@
         display: none;
     }
     /*    show menu*/
+
     [class*="df-"][class*="-menu-"] {
         display: block !important;
         height: auto !important;
@@ -305,5 +306,12 @@
         -webkit-box-shadow: none;
         box-shadow: none;
         margin:0;
+    }
+}
+
+@media (max-width:400px){
+/*    hide on small screen*/
+    [class*="df-"][class*="-respsm-"]{
+        display:none;
     }
 }
