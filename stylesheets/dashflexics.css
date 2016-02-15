@@ -1,14 +1,15 @@
 /*********************************************
- * Flexible CSS styling, v1.0
- * Able to append classes together, contains keywords "fcs-" with "-name"
+ * DashFlexics v0.11
+ * Able to append classes together, contains keywords "df-" with "-component-"
+ * Originally created as the Bootstrap supplement with flex
  * Author: yuhan2013@outlook.com
- * Date: 15 April 2016
+ * Date: 5 Feb 2016
  *********************************************/
 
 
 /* no padding block, page container */
 
-[class*="fcs-"][class*="-block"] {
+[class*="df-"][class*="-block-"] {
     font-family: Arial, sans-serif;
     font-size: 12px;
     color: #555555;
@@ -20,12 +21,14 @@
     line-height: 1.42857143;
     background-color: #fff;
     display: block;
+    overflow-x:hidden;
+    word-wrap: break-word;
 }
 
 
 /* flex container */
 
-[class*="fcs-"][class*="-flex"] {
+[class*="df-"][class*="-flex-"] {
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -34,12 +37,36 @@
     align-items: center;
     justify-content: space-between;
 }
+/* flex from start */
 
+[class*="df-"][class*="-flex"][class*="-start"] {
+    justify-content: flex-start;
+}
+
+/*from end*/
+[class*="df-"][class*="-flex-"][class*="-end-"] {
+    justify-content: flex-end;
+}
+
+/*flex stretch*/
+[class*="df-"][class*="-flex-"][class*="-stre-"]{
+     align-items:stretch;
+}
+/*flex baseline*/
+[class*="df-"][class*="-flex-"][class*="-bsl-"]{
+     align-items:baseline;
+}
+/*flex content justify*/
+[class*="df-"][class*="-flex-"] [class*="-jtfend-"]{
+      justify-content: flex-end;
+}
 
 /*navigation, absolute*/
 
-[class*="fcs-"][class*="-nav"] {
+[class*="df-"][class*="-nav-"][class*="-fix-"]{
     position: fixed;
+}
+[class*="df-"][class*="-nav-"] {
     top: 0;
     width: 100%;
     z-index: 1000;
@@ -51,7 +78,7 @@
 
 /*head, will show on both small & large screen*/
 
-[class*="fcs-"][class*="-head"] {
+[class*="df-"][class*="-head-"] {
     margin-right: -15px;
     margin-left: -15px;
 }
@@ -59,7 +86,7 @@
 
 /* toggle menu btn, show on small */
 
-[class*="fcs-"][class*="-ham"] {
+[class*="df-"][class*="-ham-"] {
     position: relative;
     padding: 9px 10px;
     margin-top: 8px;
@@ -71,7 +98,7 @@
 }
 
 
-[class*="fcs-"][class*="-menu"] {
+[class*="df-"][class*="-menu-"] {
     padding-right: 15px;
     padding-left: 15px;
     overflow-x: visible;
@@ -81,32 +108,23 @@
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, .1);
     display: none;
 }
-[class*="fcs-"][class*="-menu"] [class*="fcs-"][class*="-flex"]{
+[class*="df-"][class*="-menu-"] [class*="df-"][class*="-flex-"]{
     
     list-style: none;
 }
 
-/* flex from start */
-
-[class*="fcs-"][class*="-flex"][class*="-start"] {
-    justify-content: flex-start;
-}
-/*from end*/
-[class*="fcs-"][class*="-flex"][class*="-end"] {
-    justify-content: flex-end;
-}
 
 
 /* blur*/
 
-[class*="fcs-"][class*="-blur"] {
+[class*="df-"][class*="-blur-"] {
     opacity: .5;
 }
 
 
 /*title text*/
 
-[class*="fcs-"][class*="-title"] {
+[class*="df-"][class*="-title-"] {
     margin: 0px;
     font-size: 24px;
     font-weight: normal;
@@ -115,53 +133,57 @@
 
 /*larger title*/
 
-[class*="fcs-"][class*="-title"][class*="-b"] {
+[class*="df-"][class*="-title-"][class*="-bg-"] {
     font-size: 34px;
 }
 
 
 /*smaller title*/
 
-[class*="fcs-"][class*="-title"][class*="-s"] {
+[class*="df-"][class*="-title-"][class*="-sm-"] {
     font-size: 16px;
 }
 
 
 /* subtitle, using <small> tag*/
 
-[class*="fcs-"][class*="-title"] small {
+[class*="df-"][class*="-title-"] small {
     white-space: nowrap;
     font-size: 14px;
     letter-spacing: 0px;
     font-weight: 300;
 }
 
-[class*="fcs-"][class*="-title"][class*="-b"] small {
+[class*="df-"][class*="-title-"][class*="-bg-"] small {
     font-size: 24px;
 }
 
-[class*="fcs-"][class*="-title"][class*="-s"] small {
+[class*="df-"][class*="-title-"][class*="-sm-"] small {
     font-size: 11px;
 }
 
 
-/*  container, has padding*/
+/*  space, padding*/
 
-[class*="fcs-"][class*="-contain"] {
+[class*="df-"][class*="-sp-"] {
     padding: 10px;
 }
 
+/*  space, margin*/
 
+[class*="df-"][class*="-mg-"] {
+    margin: 10px;
+}
 /* text allign center*/
 
-[class*="fcs-"][class*="-tac"] {
+[class*="df-"][class*="-tac-"] {
     text-align: center;
 }
 
 
 /* shadow */
 
-[class*="fcs-"][class*="-card"] {
+[class*="df-"][class*="-card-"] {
     box-shadow: 0px 0px 4px 0px;
     /* rgba(150, 146, 146, 0.83);*/
     border:1px solid;
@@ -170,14 +192,26 @@
 
 /* no radius box*/
 
-[class*="fcs-"][class*="-box"] {
+[class*="df-"][class*="-box-"] {
     border-radius: 0px;
 }
 
-
+/* button */
+[class*="df-"][class*="-btn-"] {
+    text-align: center;
+    text-decoration: none;
+    display:inline-block;
+    min-width:10em;
+    padding:12px;
+    color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+    cursor:pointer;
+}
 /* add padding to top & bottom*/
 
-[class*="fcs-"][class*="-pad"] {
+[class*="df-"][class*="-pad-"] {
     padding-top: 10px;
     padding-bottom: 10px;
 }
@@ -185,7 +219,7 @@
 
 /* add padding to left & right*/
 
-[class*="fcs-"][class*="-gap"] {
+[class*="df-"][class*="-gap-"] {
     padding-left: 10px;
     padding-right: 10px;
 }
@@ -196,48 +230,53 @@
 
 /* active or inactive*/
 
-[class*="fcs-"][class*="-active"] {
+[class*="df-"][class*="-active-"] {
     background-color: rgba(120, 188, 125, 0.4);
     color: #2A7538;
     border-color: #00A800;
 }
 
-[class*="fcs-"][class*="-inactive"] {
+[class*="df-"][class*="-inactive-"] {
     background-color: rgba(188, 180, 180, 0.4);
     color: #cc3e3e;
     border-color: #cc3e3e;
 }
 
-[class*="fcs-"][class*="-blue"] {
+[class*="df-"][class*="-blue-"] {
     background-color: #3598DC;
     color: white;
 }
 
-[class*="fcs-"][class*="-green"] {
+[class*="df-"][class*="-green-"] {
     background-color: #50A550;
     color: white;
 }
 
-[class*="fcs-"][class*="-purple"] {
+[class*="df-"][class*="-purple-"] {
     background-color: #8E44AD;
     color: white;
 }
 
-[class*="fcs-"][class*="-red"] {
+[class*="df-"][class*="-red-"] {
     background-color: #ad4444;
     color: white;
 }
 
-[class*="fcs-"][class*="-silver"] {
+
+[class*="df-"][class*="-silver-"] {
     background-color: #f8f8f8;
     color: grey;
-        border-color: #e7e7e7;
+}
+
+[class*="df-"][class*="-yellow-"] {
+    background-color: #dbb127;
+    color: white;
 }
 
 
 /*select & option*/
 
-[class*="fcs-"][class*="-select"] option {
+[class*="df-"][class*="-select-"] option {
     padding: inherit;
     border-right: 1px solid grey;
 }
@@ -247,16 +286,16 @@
 
 @media (min-width: 768px) {
     /*    enlarge head*/
-    [class*="fcs-"][class*="-head"] {
+    [class*="df-"][class*="-head-"] {
         margin-right: 0px;
         margin-left: 0px;
     }
     /*    show nav-toggle*/
-    [class*="fcs-"][class*="-ham"] {
+    [class*="df-"][class*="-ham-"] {
         display: none;
     }
     /*    show menu*/
-    [class*="fcs-"][class*="-menu"] {
+    [class*="df-"][class*="-menu-"] {
         display: block !important;
         height: auto !important;
         padding-bottom: 0;
