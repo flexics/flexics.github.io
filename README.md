@@ -7,7 +7,7 @@ Using [class*="fcs-"][class*="-styleOne"][class*="-styleTwo"][...] to style matc
 [Demo](http://flexics.github.io/)
 
 ### Code
-[CSS](https://raw.githubusercontent.com/flexics/flexics.github.io/master/stylesheets/flexics.css)
+[CSS](https://raw.githubusercontent.com/flexics/flexics.github.io/master/stylesheets/dashflexics.css)
 
 ### License
 MIT License
