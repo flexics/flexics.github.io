@@ -14,7 +14,7 @@
     box-sizing: border-box;
 }
 
-/* flex container
+/* flex container*/
 [class*="fcs-"][class*="-flex"] {
     width:100%;
     display:flex;
