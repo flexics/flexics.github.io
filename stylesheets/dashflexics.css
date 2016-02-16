@@ -1,5 +1,5 @@
 /*********************************************
- * DashFlex CSS styling, v0.11
+ * DashFlex CSS styling, v0.12
  * Able to append classes together, contains keywords "df-" with "-name-"
  * Originally created as the Bootstrap supplement with flexbox 
  * Author: yuhan2013@outlook.com
@@ -275,8 +275,8 @@
 }
 [class*="df-"][class*="-clickable-"]:hover,[class*="df-"][class*="-clickable-"]:focus, [class*="df-"][class*="-btn-"]:hover, [class*="df-"][class*="-btn-"]:focus{
 	
-	filter: drop-shadow(1px 1px 2px grey) contrast(170%);
-	-webkit-filter: drop-shadow(1px 1px 2px grey) contrast(170%);	
+	filter: drop-shadow(1px 1px 2px grey) contrast(140%);
+	-webkit-filter: drop-shadow(1px 1px 2px grey) contrast(140%);	
 	text-decoration: none;
 }
 [class*="df-"][class*="-clickable-"]:acitve,[class*="df-"][class*="-btn-"]:acitve{
