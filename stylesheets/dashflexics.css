@@ -379,7 +379,8 @@
 /*grid*/
 [class*="df-"][class*="-col-"] {
 	min-height: 1px;
-	width:100%; 
+	width:100%;
+	box-sizing:border-box;
 }
 
 @media (max-width:400px){
