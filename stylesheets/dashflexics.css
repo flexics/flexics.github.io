@@ -449,31 +449,31 @@
 	
 	/* apply md col */
 	[class*="df-"][class*="-col-"][class*="-md1-"]{
-		width:30%;
+		width:10%;
 	}
 	[class*="df-"][class*="-col-"][class*="-md2-"]{
-		width:30%;
+		width:20%;
 	}
 	[class*="df-"][class*="-col-"][class*="-md3-"]{
 		width:30%;
 	}
 	[class*="df-"][class*="-col-"][class*="-md4-"]{
-		width:30%;
+		width:40%;
 	}
 	[class*="df-"][class*="-col-"][class*="-md5-"]{
-		width:30%;
+		width:50%;
 	}
 	[class*="df-"][class*="-col-"][class*="-md6-"]{
-		width:30%;
+		width:60%;
 	}
 	[class*="df-"][class*="-col-"][class*="-md7-"]{
-		width:30%;
+		width:70%;
 	}
 	[class*="df-"][class*="-col-"][class*="-md8-"]{
-		width:30%;
+		width:80%;
 	}
 	[class*="df-"][class*="-col-"][class*="-md9-"]{
-		width:30%;
+		width:90%;
 	}
 	
 	
