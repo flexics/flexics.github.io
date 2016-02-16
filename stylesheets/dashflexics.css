@@ -1,11 +1,10 @@
 /*********************************************
  * DashFlex CSS styling, v0.11
- * Able to append classes together, contains keywords "df-" with "-name"
- * Originally created as the Bootstrap supplement with flex
+ * Able to append classes together, contains keywords "df-" with "-name-"
+ * Originally created as the Bootstrap supplement with flexbox 
  * Author: yuhan2013@outlook.com
  * Date: 5 Feb 2016
  *********************************************/
-
 
 /* no padding block, page container */
 
@@ -33,39 +32,60 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    align-content: flex-start;
+    align-content: space-between;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
 }
-/* flex from start */
+
+
+/* direc column */
+
+[class*="df-"][class*="-flex"][class*="-ver"] {
+    flex-flow: column nowrap;
+}
+
+/* item from top */
 
 [class*="df-"][class*="-flex"][class*="-start"] {
-    justify-content: flex-start;
+    align-items: flex-start;
 }
 
 /*from end*/
 [class*="df-"][class*="-flex-"][class*="-end-"] {
-    justify-content: flex-end;
+    align-items: flex-end;
 }
 
-/*flex stretch*/
+/*item stretch*/
 [class*="df-"][class*="-flex-"][class*="-stre-"]{
-     align-items:stretch;
+	align-items:stretch;
 }
-/*flex baseline*/
+/*item baseline*/
 [class*="df-"][class*="-flex-"][class*="-bsl-"]{
-     align-items:baseline;
+	align-items:baseline;
 }
-/*flex content justify*/
-[class*="df-"][class*="-flex-"] [class*="-jtfend-"]{
-      justify-content: flex-end;
+/* content center*/
+[class*="df-"][class*="-flex-"][class*="-jfmid-"]{
+  justify-content: center;
+}
+/* content left*/
+[class*="df-"][class*="-flex-"][class*="-jfstart-"]{
+  justify-content: flex-start;
+}
+/* content right*/
+[class*="df-"][class*="-flex-"][class*="-jfend-"]{
+  justify-content: flex-end;
+}
+/* content around*/ 
+[class*="df-"][class*="-flex-"][class*="-jfsp-"]{
+  justify-content: space-around;
+}
+/* content around*/ 
+[class*="df-"][class*="-flex-"][class*="-jfsb-"]{
+  justify-content: space-between;
 }
 
-/*navigation, absolute*/
+/*navigation*/
 
-[class*="df-"][class*="-nav-"][class*="-fix-"]{
-    position: fixed;
-}
 [class*="df-"][class*="-nav-"] {
     top: 0;
     width: 100%;
@@ -75,7 +95,32 @@
     border: 1px solid transparent;
 }
 
+[class*="df-"][class*="-nav-"][class*="-fix-"]{
+    position: fixed;
+}
 
+
+
+
+/* Profile container*/
+
+[class*="df-"][class*="-profile-"]{
+	float: none;
+	margin: 0px auto;
+	width: 50%;
+	height: 50%;
+}
+
+/* Profile Image (resp) */
+[class*="df-"][class*="-profile-"] img{
+	
+	/* border-radius: 50%; */
+	display: block;
+	height: auto;
+	max-width: 100%;
+	vertical-align: middle;
+	border: 0px none;
+}
 /*head, will show on both small & large screen*/
 
 [class*="df-"][class*="-head-"] {
@@ -181,34 +226,74 @@
 }
 
 
-/* shadow */
+
+/* card view, with light shadow */
 
 [class*="df-"][class*="-card-"] {
-    box-shadow: 0px 0px 4px 0px;
-    /* rgba(150, 146, 146, 0.83);*/
-    border:1px solid;
+    -webkit-box-shadow: 0px 0px 4px 0px rgba(202, 199, 199, 0.83);
+    box-shadow: 0px 0px 4px 0px rgba(202, 199, 199, 0.83);
+    border: 1px solid rgba(195, 195, 195, 0.83);
 }
 
+/* inherit color shadow*/
+[class*="df-"][class*="-sdcard-"] {
+    -webkit-box-shadow: 0px 0px 4px 0px;
+    box-shadow: 0px 0px 4px 0px;
+	border:1px solid;
+}
 
-/* no radius box*/
+/* remove default decoration like the <button> style*/
 
 [class*="df-"][class*="-box-"] {
     border-radius: 0px;
+	border:0px;
 }
 
 /* button */
 [class*="df-"][class*="-btn-"] {
     text-align: center;
-    text-decoration: none;
     display:inline-block;
     min-width:10em;
     padding:12px;
     color: rgba(255, 255, 255, 0.9);
     background-color: rgba(255, 255, 255, 0.08);
     border: 1px solid rgba(255, 255, 255, 0.4);
-    transition: color 0.2s, background-color 0.2s, border-color 0.2s;
-    cursor:pointer;
 }
+
+/* button-inverse */
+[class*="df-"][class*="-btn-"][class*="-inv-"] {
+    color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+/* click-able effects, applies to -btn- */
+[class*="df-"][class*="-clickable-"],[class*="df-"][class*="-btn-"] {
+    text-decoration: none;
+	cursor:pointer;
+	transition: all  0.2s linear;
+}
+[class*="df-"][class*="-clickable-"]:hover,[class*="df-"][class*="-clickable-"]:focus, [class*="df-"][class*="-btn-"]:hover, [class*="df-"][class*="-btn-"]:focus{
+	
+	filter: drop-shadow(1px 1px 2px grey) contrast(170%);
+	-webkit-filter: drop-shadow(1px 1px 2px grey) contrast(170%);	
+	text-decoration: none;
+}
+[class*="df-"][class*="-clickable-"]:acitve,[class*="df-"][class*="-btn-"]:acitve{
+	-webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .2);
+	box-shadow: inset 0 3px 5px rgba(0, 0, 0, .2);
+}
+
+[class*="df-"][class*="-clickable-"][disabled], [class*="df-"][class*="-disable-"]
+{
+	cursor: not-allowed;
+	filter: alpha(opacity=65);
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	opacity: .65;
+}
+
+
 /* add padding to top & bottom*/
 
 [class*="df-"][class*="-pad-"] {
@@ -233,13 +318,13 @@
 [class*="df-"][class*="-active-"] {
     background-color: rgba(120, 188, 125, 0.4);
     color: #2A7538;
-    border-color: #00A800;
+    border-color: rgba(0, 168, 0, 0.22);
 }
 
 [class*="df-"][class*="-inactive-"] {
     background-color: rgba(188, 180, 180, 0.4);
     color: #cc3e3e;
-    border-color: #cc3e3e;
+    border-color: rgba(204, 62, 62, 0.55);
 }
 
 [class*="df-"][class*="-blue-"] {
@@ -251,10 +336,17 @@
     background-color: #50A550;
     color: white;
 }
+[class*="df-"][class*="-white-"] {
+    background-color: rgba(255, 255, 255, 0.8);
+    color:  grey;
+}
 
 [class*="df-"][class*="-purple-"] {
     background-color: #8E44AD;
     color: white;
+}
+[class*="df-"][class*="-purpletxt-"] {
+    color: #5a0a7c;
 }
 
 [class*="df-"][class*="-red-"] {
@@ -264,8 +356,8 @@
 
 
 [class*="df-"][class*="-silver-"] {
-    background-color: #f8f8f8;
-    color: grey;
+    background-color: #CECECE;
+    color: #585858;
 }
 
 [class*="df-"][class*="-yellow-"] {
@@ -284,6 +376,21 @@
 
 /*responsive*/
 
+/*grid*/
+[class*="df-"][class*="-col-"] {
+	min-height: 1px;
+	width:100%; 
+}
+
+@media (max-width:400px){
+/*    hide on small screen*/
+    [class*="df-"][class*="-respsm-"]{
+        display:none;
+    }
+}
+
+
+/* >sm screen  */
 @media (min-width: 768px) {
     /*    enlarge head*/
     [class*="df-"][class*="-head-"] {
@@ -307,11 +414,47 @@
         box-shadow: none;
         margin:0;
     }
+	
+	/* apply sm col */
+	[class*="df-"][class*="-col-"][class*="-sm2-"]{
+		width:20%;
+	}	
+	
+	[class*="df-"][class*="-col-"][class*="-sm3-"]{
+		width:30%;
+	}
+	[class*="df-"][class*="-col-"][class*="-sm4-"]{
+		width:40%;
+	}		
+	[class*="df-"][class*="-col-"][class*="-sm5-"]{
+		width:50%;
+	}	
+	[class*="df-"][class*="-col-"][class*="-sm6-"]{
+		width:60%;
+	}	
+	[class*="df-"][class*="-col-"][class*="-sm7-"]{
+		width:70%;
+	}		
+	[class*="df-"][class*="-col-"][class*="-sm8-"]{
+		width:80%;
+	}	
+	[class*="df-"][class*="-col-"][class*="-sm9-"]{
+		width:90%;
+	}
 }
 
-@media (max-width:400px){
-/*    hide on small screen*/
-    [class*="df-"][class*="-respsm-"]{
-        display:none;
-    }
+
+/* >md screen  */
+@media (min-width: 992px) {
+	
+	/* apply md col */
+	[class*="df-"][class*="-col-"][class*="-md3-"]{
+		width:30%;
+	}
+	
+	
+}
+/* >lg screen  */
+@media (min-width: 1200px) {
+
 }
