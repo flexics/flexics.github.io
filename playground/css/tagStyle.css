@@ -1,0 +1,48 @@
+/*********************************************
+ * defautlStyle CSS styling, v 0.1
+ * Style HTML TAG
+ * Use as a CSS base
+ * Author: Yu Han 2011yuhan@gamil.com 2016
+ *********************************************/
+
+
+*{
+    transition:all 0.2s linear;
+}
+
+/*form should be nicer*/
+
+form {
+    padding: 8px;
+    background-color: rgba(0, 0, 0, 0.04);
+}
+
+form fieldset {
+    padding: 8px;
+    border:0;
+}
+
+form fieldset label {
+    display: block;
+}
+
+form fieldset * {
+    width: 100%;
+}
+
+form fieldset input {
+    padding: 5px;
+}
+
+form fieldset [type="submit"]{
+    margin-top:5px;
+}
+
+form fieldset [type="submit"]:before{
+    content:'';
+    border-bottom:1px solid black;
+}
+
+button {
+    padding: 5px;
+}
