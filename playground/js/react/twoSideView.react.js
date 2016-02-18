@@ -2,8 +2,7 @@
  * React two-side view model v 0.1
  * Reuire ReactJS (0.14.7), dashflexics.css
  * BODY > view > header + ( leftblock + rightblock )
- * Yu Han 2016 @claydata.com
- * hany@mynsmg.com.au
+ * Yu Han 2016 2011yuhan@gmail.com
  * *****************************/
 
 //View 
