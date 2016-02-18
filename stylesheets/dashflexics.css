@@ -1,10 +1,27 @@
 /*********************************************
- * DashFlex CSS styling, v0.12
+ * DashFlex CSS styling, v0.2
  * Able to append classes together, contains keywords "df-" with "-name-"
- * Originally created as the Bootstrap supplement with flexbox 
- * Author: yuhan2013@outlook.com
- * Date: 5 Feb 2016
+ * Originally created as the Bootstrap supplement with flexbox features
+ * Author: yuhan2013@outlook.com 2016
  *********************************************/
+
+
+/* Use (edited) Bootstrap3 css & js as base */
+@import url("bootstrap.edit.css");
+@import url("bootstrap-theme.edit.css");
+
+/* Use normalize.css as base 2, */
+@import url("normalize.css");
+
+/* defautlStyle as base 3 */
+@import url("defautlStyle.css");
+
+
+
+[class*="df-"]
+{
+    transition: all 0.1s linear;
+}
 
 /* no padding block, page container */
 
@@ -20,7 +37,7 @@
     line-height: 1.42857143;
     background-color: #fff;
     display: block;
-    overflow-x:hidden;
+    overflow-x: hidden;
     word-wrap: break-word;
 }
 
@@ -44,45 +61,69 @@
     flex-flow: column nowrap;
 }
 
+
 /* item from top */
 
 [class*="df-"][class*="-flex"][class*="-start"] {
     align-items: flex-start;
 }
 
+
 /*from end*/
+
 [class*="df-"][class*="-flex-"][class*="-end-"] {
     align-items: flex-end;
 }
 
+
 /*item stretch*/
-[class*="df-"][class*="-flex-"][class*="-stre-"]{
-	align-items:stretch;
+
+[class*="df-"][class*="-flex-"][class*="-stre-"] {
+    align-items: stretch;
 }
+
+
 /*item baseline*/
-[class*="df-"][class*="-flex-"][class*="-bsl-"]{
-	align-items:baseline;
+
+[class*="df-"][class*="-flex-"][class*="-bsl-"] {
+    align-items: baseline;
 }
+
+
 /* content center*/
-[class*="df-"][class*="-flex-"][class*="-jfmid-"]{
-  justify-content: center;
+
+[class*="df-"][class*="-flex-"][class*="-jfmid-"] {
+    justify-content: center;
 }
+
+
 /* content left*/
-[class*="df-"][class*="-flex-"][class*="-jfstart-"]{
-  justify-content: flex-start;
+
+[class*="df-"][class*="-flex-"][class*="-jfstart-"] {
+    justify-content: flex-start;
 }
+
+
 /* content right*/
-[class*="df-"][class*="-flex-"][class*="-jfend-"]{
-  justify-content: flex-end;
+
+[class*="df-"][class*="-flex-"][class*="-jfend-"] {
+    justify-content: flex-end;
 }
-/* content around*/ 
-[class*="df-"][class*="-flex-"][class*="-jfsp-"]{
-  justify-content: space-around;
+
+
+/* content around*/
+
+[class*="df-"][class*="-flex-"][class*="-jfsp-"] {
+    justify-content: space-around;
 }
-/* content around*/ 
-[class*="df-"][class*="-flex-"][class*="-jfsb-"]{
-  justify-content: space-between;
+
+
+/* content around*/
+
+[class*="df-"][class*="-flex-"][class*="-jfsb-"] {
+    justify-content: space-between;
 }
+
 
 /*navigation*/
 
@@ -95,32 +136,33 @@
     border: 1px solid transparent;
 }
 
-[class*="df-"][class*="-nav-"][class*="-fix-"]{
+[class*="df-"][class*="-nav-"][class*="-fix-"] {
     position: fixed;
 }
 
 
-
-
 /* Profile container*/
 
-[class*="df-"][class*="-profile-"]{
-	float: none;
-	margin: 0px auto;
-	width: 50%;
-	height: 50%;
+[class*="df-"][class*="-profile-"] {
+    float: none;
+    margin: 0px auto;
+    width: 50%;
+    height: 50%;
 }
 
+
 /* Profile Image (resp) */
-[class*="df-"][class*="-profile-"] img{
-	
-	/* border-radius: 50%; */
-	display: block;
-	height: auto;
-	max-width: 100%;
-	vertical-align: middle;
-	border: 0px none;
+
+[class*="df-"][class*="-profile-"] img {
+    /* border-radius: 50%; */
+    display: block;
+    height: auto;
+    max-width: 100%;
+    vertical-align: middle;
+    border: 0px none;
 }
+
+
 /*head, will show on both small & large screen*/
 
 [class*="df-"][class*="-head-"] {
@@ -142,7 +184,6 @@
     border: 1px solid transparent;
 }
 
-
 [class*="df-"][class*="-menu-"] {
     padding-right: 15px;
     padding-left: 15px;
@@ -153,11 +194,10 @@
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, .1);
     display: none;
 }
-[class*="df-"][class*="-menu-"] [class*="df-"][class*="-flex-"]{
-    
+
+[class*="df-"][class*="-menu-"] [class*="df-"][class*="-flex-"] {
     list-style: none;
 }
-
 
 
 /* blur*/
@@ -214,17 +254,19 @@
     padding: 10px;
 }
 
+
 /*  space, margin*/
 
 [class*="df-"][class*="-mg-"] {
     margin: 10px;
 }
+
+
 /* text allign center*/
 
 [class*="df-"][class*="-tac-"] {
     text-align: center;
 }
-
 
 
 /* card view, with light shadow */
@@ -235,62 +277,93 @@
     border: 1px solid rgba(195, 195, 195, 0.83);
 }
 
+
 /* inherit color shadow*/
+
 [class*="df-"][class*="-sdcard-"] {
     -webkit-box-shadow: 0px 0px 4px 0px;
     box-shadow: 0px 0px 4px 0px;
-	border:1px solid;
+    border: 1px solid;
 }
+
 
 /* remove default decoration like the <button> style*/
 
 [class*="df-"][class*="-box-"] {
     border-radius: 0px;
-	border:0px;
+    border: 0px;
 }
 
+
 /* button */
+
 [class*="df-"][class*="-btn-"] {
     text-align: center;
-    display:inline-block;
-    min-width:10em;
-    padding:12px;
+    display: inline-block;
+    min-width: 10em;
+    padding: 12px;
     color: rgba(255, 255, 255, 0.9);
     background-color: rgba(255, 255, 255, 0.08);
     border: 1px solid rgba(255, 255, 255, 0.4);
 }
 
+
 /* button-inverse */
+
 [class*="df-"][class*="-btn-"][class*="-inv-"] {
     color: rgba(0, 0, 0, 0.8);
     background-color: rgba(0, 0, 0, 0.08);
     border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
+
 /* click-able effects, applies to -btn- */
-[class*="df-"][class*="-clickable-"],[class*="df-"][class*="-btn-"] {
+
+[class*="df-"][class*="-clickable-"],
+[class*="df-"][class*="-hvrmore-"],
+[class*="df-"][class*="-btn-"] {
     text-decoration: none;
-	cursor:pointer;
-	transition: all  0.2s linear;
-}
-[class*="df-"][class*="-clickable-"]:hover,[class*="df-"][class*="-clickable-"]:focus, [class*="df-"][class*="-btn-"]:hover, [class*="df-"][class*="-btn-"]:focus{
-	
-	filter: drop-shadow(1px 1px 2px grey) contrast(140%);
-	-webkit-filter: drop-shadow(1px 1px 2px grey) contrast(140%);	
-	text-decoration: none;
-}
-[class*="df-"][class*="-clickable-"]:acitve,[class*="df-"][class*="-btn-"]:acitve{
-	-webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .2);
-	box-shadow: inset 0 3px 5px rgba(0, 0, 0, .2);
+    cursor: pointer;
 }
 
-[class*="df-"][class*="-clickable-"][disabled], [class*="df-"][class*="-disable-"]
-{
-	cursor: not-allowed;
-	filter: alpha(opacity=65);
-	-webkit-box-shadow: none;
-	box-shadow: none;
-	opacity: .65;
+[class*="df-"][class*="-clickable-"]:hover,
+[class*="df-"][class*="-clickable-"]:focus,
+[class*="df-"][class*="-btn-"]:hover,
+[class*="df-"][class*="-btn-"]:focus {
+    filter: drop-shadow(1px 1px 2px grey) contrast(140%);
+    -webkit-filter: drop-shadow(1px 1px 2px grey) contrast(140%);
+    text-decoration: none;
+}
+
+[class*="df-"][class*="-clickable-"]:acitve,
+[class*="df-"][class*="-btn-"]:acitve {
+    -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .2);
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, .2);
+}
+
+[class*="df-"][class*="-hvrmore-"]:focus,
+[class*="df-"][class*="-hvrmore-"]:hover,
+[class*="df-"][class*="-hvrmore-"]:active {
+    -ms-transform: scale(1.12);
+    /* IE 9 */
+    -webkit-transform: scale(1.12);
+    /* Safari */
+    transform: scale(1.12);
+    margin-left:10%;
+    letter-spacing: 0.1em;
+	z-index:1000;
+    filter:drop-shadow(2px 2px 3px rgba(0,0,0,0.2)) contrast(150%);
+    -webkit-filter:drop-shadow(2px 2px 3px rgba(0,0,0,0.2)) contrast(150%);
+    
+}
+
+[class*="df-"][class*="-clickable-"][disabled],
+[class*="df-"][class*="-disable-"] {
+    cursor: not-allowed;
+    filter: alpha(opacity=65);
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    opacity: .65;
 }
 
 
@@ -307,6 +380,13 @@
 [class*="df-"][class*="-gap-"] {
     padding-left: 10px;
     padding-right: 10px;
+}
+
+
+/*margin left*/
+
+[class*="df-"][class*="-mrgl-"] {
+    margin-left: 15px;
 }
 
 
@@ -332,19 +412,26 @@
     color: white;
 }
 
+[class*="df-"][class*="-skyblue-"] {
+    background-color: #59ace5;
+    color: white;
+}
+
 [class*="df-"][class*="-green-"] {
     background-color: #50A550;
     color: white;
 }
+
 [class*="df-"][class*="-white-"] {
     background-color: rgba(255, 255, 255, 0.8);
-    color:  grey;
+    color: grey;
 }
 
 [class*="df-"][class*="-purple-"] {
     background-color: #8E44AD;
     color: white;
 }
+
 [class*="df-"][class*="-purpletxt-"] {
     color: #5a0a7c;
 }
@@ -353,7 +440,6 @@
     background-color: #ad4444;
     color: white;
 }
-
 
 [class*="df-"][class*="-silver-"] {
     background-color: #CECECE;
@@ -375,23 +461,68 @@
 
 
 /*responsive*/
-
 /*grid*/
 [class*="df-"][class*="-col-"] {
-	min-height: 1px;
-	width:100%;
-	box-sizing:border-box;
+    min-height: 1px;
+    width: 100%;
+    box-sizing: border-box;
+}
+/*toggle*/
+
+[class*="df-"][class*="-tgl-"] {
+    width:0;
+    
 }
 
-@media (max-width:400px){
-/*    hide on small screen*/
-    [class*="df-"][class*="-respsm-"]{
-        display:none;
+	
+/* apply xs col */
+
+[class*="df-"][class*="-col-"][class*="-xs-"] {
+    width: 10%;
+}
+
+[class*="df-"][class*="-col-"][class*="-xs2-"] {
+    width: 20%;
+}
+
+[class*="df-"][class*="-col-"][class*="-xs3-"] {
+    width: 30%;
+}
+
+[class*="df-"][class*="-col-"][class*="-xs4-"] {
+    width: 40%;
+}
+
+[class*="df-"][class*="-col-"][class*="-xs5-"] {
+    width: 50%;
+}
+
+[class*="df-"][class*="-col-"][class*="-xs6-"] {
+    width: 60%;
+}
+
+[class*="df-"][class*="-col-"][class*="-xs7-"] {
+    width: 70%;
+}
+
+[class*="df-"][class*="-col-"][class*="-xs8-"] {
+    width: 80%;
+}
+
+[class*="df-"][class*="-col-"][class*="-xs9-"] {
+    width: 90%;
+}
+
+@media (max-width:400px) {
+    /*    hide on small screen*/
+    [class*="df-"][class*="-respsm-"] {
+        display: none;
     }
 }
 
 
 /* >sm screen  */
+
 @media (min-width: 768px) {
     /*    enlarge head*/
     [class*="df-"][class*="-head-"] {
@@ -403,7 +534,6 @@
         display: none;
     }
     /*    show menu*/
-
     [class*="df-"][class*="-menu-"] {
         display: block !important;
         height: auto !important;
@@ -413,73 +543,84 @@
         border-top: 0;
         -webkit-box-shadow: none;
         box-shadow: none;
-        margin:0;
+        margin: 0;
     }
 	
-	/* apply sm col */
-	[class*="df-"][class*="-col-"][class*="-sm2-"]{
-		width:20%;
-	}	
 	
-	[class*="df-"][class*="-col-"][class*="-sm3-"]{
-		width:30%;
-	}
-	[class*="df-"][class*="-col-"][class*="-sm4-"]{
-		width:40%;
-	}		
-	[class*="df-"][class*="-col-"][class*="-sm5-"]{
-		width:50%;
-	}	
-	[class*="df-"][class*="-col-"][class*="-sm6-"]{
-		width:60%;
-	}	
-	[class*="df-"][class*="-col-"][class*="-sm7-"]{
-		width:70%;
-	}		
-	[class*="df-"][class*="-col-"][class*="-sm8-"]{
-		width:80%;
-	}	
-	[class*="df-"][class*="-col-"][class*="-sm9-"]{
-		width:90%;
-	}
+    /*    show tgl*/
+    [class*="df-"][class*="-tgl-"][class*="-s-"] {
+        max-width:none;
+    }
+    /* apply sm col */
+    [class*="df-"][class*="-col-"][class*="-sm-"] {
+        width: 10%;
+    }
+    [class*="df-"][class*="-col-"][class*="-sm2-"] {
+        width: 20%;
+    }
+    [class*="df-"][class*="-col-"][class*="-sm3-"] {
+        width: 30%;
+    }
+    [class*="df-"][class*="-col-"][class*="-sm4-"] {
+        width: 40%;
+    }
+    [class*="df-"][class*="-col-"][class*="-sm5-"] {
+        width: 50%;
+    }
+    [class*="df-"][class*="-col-"][class*="-sm6-"] {
+        width: 60%;
+    }
+    [class*="df-"][class*="-col-"][class*="-sm7-"] {
+        width: 70%;
+    }
+    [class*="df-"][class*="-col-"][class*="-sm8-"] {
+        width: 80%;
+    }
+    [class*="df-"][class*="-col-"][class*="-sm9-"] {
+        width: 90%;
+    }
 }
 
 
 /* >md screen  */
-@media (min-width: 992px) {
-	
-	/* apply md col */
-	[class*="df-"][class*="-col-"][class*="-md1-"]{
-		width:10%;
-	}
-	[class*="df-"][class*="-col-"][class*="-md2-"]{
-		width:20%;
-	}
-	[class*="df-"][class*="-col-"][class*="-md3-"]{
-		width:30%;
-	}
-	[class*="df-"][class*="-col-"][class*="-md4-"]{
-		width:40%;
-	}
-	[class*="df-"][class*="-col-"][class*="-md5-"]{
-		width:50%;
-	}
-	[class*="df-"][class*="-col-"][class*="-md6-"]{
-		width:60%;
-	}
-	[class*="df-"][class*="-col-"][class*="-md7-"]{
-		width:70%;
-	}
-	[class*="df-"][class*="-col-"][class*="-md8-"]{
-		width:80%;
-	}
-	[class*="df-"][class*="-col-"][class*="-md9-"]{
-		width:90%;
-	}
-	
-	
-}
-/* >lg screen  */
-@media (min-width: 1200px) {
 
+@media (min-width: 992px) {
+    /*show tgl*/
+    [class*="df-"][class*="-tgl-"][class*="-m-"] {
+         max-width:none;
+    }
+    
+    /* apply md col */
+    [class*="df-"][class*="-col-"][class*="-md1-"] {
+        width: 10%;
+    }
+    [class*="df-"][class*="-col-"][class*="-md2-"] {
+        width: 20%;
+    }
+    [class*="df-"][class*="-col-"][class*="-md3-"] {
+        width: 30%;
+    }
+    [class*="df-"][class*="-col-"][class*="-md4-"] {
+        width: 40%;
+    }
+    [class*="df-"][class*="-col-"][class*="-md5-"] {
+        width: 50%;
+    }
+    [class*="df-"][class*="-col-"][class*="-md6-"] {
+        width: 60%;
+    }
+    [class*="df-"][class*="-col-"][class*="-md7-"] {
+        width: 70%;
+    }
+    [class*="df-"][class*="-col-"][class*="-md8-"] {
+        width: 80%;
+    }
+    [class*="df-"][class*="-col-"][class*="-md9-"] {
+        width: 90%;
+    }
 }
+
+
+/* >lg screen  */
+
+@media (min-width: 1200px) {}
