@@ -1,0 +1,74 @@
+<label>demo</label>
+<div id="demo">
+
+</div>
+<label>app</label>
+<div id="app">
+
+</div>
+<script src="js/require.js"></script>
+
+
+<script>
+    require.config({
+        baseUrl: 'js/',
+        shim: {},
+    });
+
+    define('App', ['react', 'react-dom'], function (React, ReactDOM) {
+
+        function render(obj, props, container) {
+            console.log(container);
+            ReactDOM.render(React.createElement(obj, props), document.getElementById(container));
+        };
+        return render;
+    });
+
+    define('RactClassCreator', ['react'], function (React) {
+
+        function add(state, tag, attrs, children) {
+            console.log(tag);
+            return React.createClass({
+                getInitialState: function () {
+                    return state;
+                },
+                componentDidMount:function(){
+                    console.log(this,'mount');
+                },
+                render: function () {
+                    return React.createElement(
+                        tag,
+                        attrs,
+                        children
+                    )
+                }
+            });
+        };
+        return add;
+    });
+
+    require(['App', 'RactClassCreator', ], function (app, make) {
+
+        var tag = 'div';
+        var tag2 = 'span';
+        var attrs = {
+            className: 'classhere'
+        }; 
+        var attrs2 = {
+            className: 'classhere2'
+        };
+        var children = 'demo here';
+        var children2 = 'demo2 here';
+        var state = {key:1};
+        var state2 = {key:2};
+//        var newchildren = make(state, tag, attrs, children);
+        var newchildren_2 = make(state2, tag2, attrs2, make(state, tag, attrs, children));
+        var appprops = {
+            onClick: console.log,
+        };
+        var newapp = app(
+            newchildren_2,
+            appprops,
+            'app');
+    });
+</script>
